@@ -19,8 +19,10 @@ def oracle
     This is the oracle room.
     The question is : what walks on 4 legs in the morning, two at noon and three in the evening?
   FOO
+
   ask(question)
-  answer = gets.chomp
+  
+  answer = gets.chomp.downcase
   
   tries = 0
   maxtries = 3
@@ -32,8 +34,10 @@ def oracle
       puts "You have #{maxtries - tries} tries left!"
     end
     tries += 1
+
     ask(question)
-    answer = gets.chomp
+
+    answer = gets.chomp.downcase
   end
 
   dead("Incorrect!")
@@ -46,8 +50,10 @@ def main
     There are 3 doors.
     Which one do you choose?
   FOO
+
   ask(question)
-  answer = gets.chomp
+
+  answer = gets.chomp.downcase
 
   case answer
     when "left"
@@ -70,9 +76,10 @@ def super_question
     c) Condate
     Choose wisely!
   FOO
+
   ask(question)
 
-  answer = gets.chomp
+  answer = gets.chomp.downcase
 
   case answer
     when "a"
@@ -93,7 +100,8 @@ def trap
   FOO
   ask(question)
 
-  answer = gets.chomp
+  answer = gets.chomp.downcase
+
   if answer == "pest"
     dead("You're sick of the pest!")
   elsif answer == "cholera"
